@@ -4,12 +4,10 @@ import tsQuerySelector from '../../function/function'
 
 class Sources {
     draw(data: []) {
-        console.log(data)
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = tsQuerySelector(document,'#sourceItemTemp')as HTMLTemplateElement;
 
         data.forEach((item: sourceData) => {
-            console.log(item)
             const sourceClone = sourceItemTemp.content.cloneNode(true) as HTMLElement;
 
             tsQuerySelector(sourceClone, '.source__item-name').textContent = item.name;

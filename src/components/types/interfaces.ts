@@ -23,3 +23,13 @@ export interface sourceData {
   name: string;
   url: string;
 }
+
+export interface drawSourcesData {
+  sources: [];
+  status: string;
+}
+export interface drawNewsData {
+  articles: [];
+  status: string;
+  totalResults: string;
+}
