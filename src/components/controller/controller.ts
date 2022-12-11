@@ -1,5 +1,5 @@
 import AppLoader from './appLoader';
-import { drawSourcesData, callbackFn } from '../types/interfaces'
+import { drawSourcesData, callbackFn } from '../types/interfaces';
 
 class AppController extends AppLoader {
     getSources(callback: callbackFn) {
@@ -12,8 +12,7 @@ class AppController extends AppLoader {
     }
 
     getNews(e: Event, callback: callbackFn) {
-        console.log(e)
-        let target= <HTMLElement>e.target;
+        let target = <HTMLElement>e.target;
         const newsContainer = <HTMLElement>e.currentTarget;
 
         while (target !== newsContainer) {
@@ -33,7 +32,7 @@ class AppController extends AppLoader {
                 }
                 return;
             }
-            target = <HTMLElement>target.parentNode ;
+            target = <HTMLElement>target.parentNode;
         }
     }
 }

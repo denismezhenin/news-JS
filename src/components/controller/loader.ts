@@ -1,4 +1,4 @@
-import { drawSourcesData, callbackFn } from '../types/interfaces'
+import { drawSourcesData, callbackFn } from '../types/interfaces';
 
 class Loader {
     baseLink: string;
@@ -10,13 +10,11 @@ class Loader {
     }
 
     getResp(
-        { endpoint, options = {} }: {endpoint: string, options?: {}},
+        { endpoint, options = {} }: { endpoint: string; options?: {} },
         callback: callbackFn = () => {
-
             console.error('No callback for GET response');
         }
     ) {
-
         this.load('GET', endpoint, callback, options);
     }
 
@@ -30,11 +28,11 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: {sources?: string}, endpoint: string) {
-        const urlOptions: {[key: string]: string } = { ...this.options, ...options };
+    makeUrl(options: { sources?: string }, endpoint: string) {
+        const urlOptions: { [key: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
         Object.keys(urlOptions).forEach((key: string) => {
-            url += `${key}=${(urlOptions[key])}&`;
+            url += `${key}=${urlOptions[key]}&`;
         });
 
         return url.slice(0, -1);
@@ -44,7 +42,7 @@ class Loader {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data) => (callback(data)))
+            .then((data) => callback(data))
             .catch((err) => console.error(err));
     }
 }
