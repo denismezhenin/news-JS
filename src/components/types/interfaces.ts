@@ -13,3 +13,13 @@ title: string;
 url: string;
 urlToImage: string;
 }
+
+export interface sourceData {
+  category: string;
+  country: string;
+  description: string;
+  id: string;
+  language: string;
+  name: string;
+  url: string;
+}
