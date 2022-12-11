@@ -1,5 +1,5 @@
 import './news.css';
-import { source, drawData } from '../../types/interfaces';
+import { drawData } from '../../types/interfaces';
 import tsQuerySelector from '../../function/function';
 
 class News {

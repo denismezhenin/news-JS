@@ -1,4 +1,4 @@
-import { drawSourcesData, callbackFn } from '../types/interfaces';
+import { callbackFn } from '../types/interfaces';
 
 class Loader {
     baseLink: string;
@@ -10,11 +10,12 @@ class Loader {
     }
 
     getResp(
-        { endpoint, options = {} }: { endpoint: string; options?: {} },
+        { endpoint, options = {} }: { endpoint: string; options?: object },
         callback: callbackFn = () => {
             console.error('No callback for GET response');
         }
     ) {
+        console.log(options);
         this.load('GET', endpoint, callback, options);
     }
 

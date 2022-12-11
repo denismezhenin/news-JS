@@ -1,5 +1,5 @@
 import AppLoader from './appLoader';
-import { drawSourcesData, callbackFn } from '../types/interfaces';
+import { callbackFn } from '../types/interfaces';
 
 class AppController extends AppLoader {
     getSources(callback: callbackFn) {
@@ -17,7 +17,7 @@ class AppController extends AppLoader {
 
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
-                const sourceId: string = target.getAttribute('data-source-id')!;
+                const sourceId = target.getAttribute('data-source-id') as string;
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(
