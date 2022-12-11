@@ -33,3 +33,5 @@ export interface drawNewsData {
   status: string;
   totalResults: string;
 }
+
+export type callbackFn = (obj?: drawSourcesData) => void

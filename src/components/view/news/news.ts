@@ -10,7 +10,6 @@ class News {
         const newsItemTemp = tsQuerySelector(document, '#newsItemTemp') as HTMLTemplateElement;
 
         news.forEach((item: drawData, idx: number) => {
-            console.log(item)
             const newsClone = newsItemTemp.content.cloneNode(true) as HTMLElement;
 
             if (idx % 2) tsQuerySelector(newsClone,'.news__item').classList.add('alt');
