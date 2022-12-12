@@ -3,7 +3,7 @@ import { sourceData } from '../../types/interfaces';
 import tsQuerySelector from '../../function/function';
 
 class Sources {
-    draw(data: []) {
+    draw(data: sourceData[]): void {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = tsQuerySelector(document, '#sourceItemTemp') as HTMLTemplateElement;
 

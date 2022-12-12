@@ -3,7 +3,7 @@ import { drawData } from '../../types/interfaces';
 import tsQuerySelector from '../../function/function';
 
 class News {
-    draw(data: []) {
+    draw(data: drawData[]): void {
         const news = data.length >= 10 ? data.filter((_item, idx: number) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();

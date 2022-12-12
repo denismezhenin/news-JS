@@ -11,7 +11,7 @@ class App {
         this.view = new AppView();
     }
 
-    start() {
+    start(): void {
         tsQuerySelector(document, '.sources').addEventListener('click', (e) =>
             this.controller.getNews(e, (data) => {
                 if (data != undefined) {
